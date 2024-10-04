@@ -142,7 +142,7 @@ class Tv4play(Service, OpenGraphThumbMixin):
         jansson = self._graphdetails(token, showid)
         for season in jansson["data"]["media"]["allSeasonLinks"]:
             graph_list = self._graphql(season["seasonId"])
-            for i in graph_list:
+            for i in reversed(graph_list):
                 if i not in items:
                     items.append(i)
 
