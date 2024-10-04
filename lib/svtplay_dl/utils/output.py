@@ -210,7 +210,7 @@ def find_dupes(output, config, video=True):
     otherfiles = [".srt", ".smi", ".tt", ".sami", ".wrst", ".tbn", ".nfo"]
     name = formatname(output, config)
 
-    logging.info("Outfile: %s", name.name)
+    logging.info("Outfile: %s/%s", name.parent, name.name)
     if name.is_file() and not config.get("force"):
         return True, name
     # dir = os.path.dirname(os.path.realpath(name))
